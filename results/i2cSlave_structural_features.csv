@@ -1,0 +1,2 @@
+Nodes,Edges,AverageDegree,RareNodeCount,FanInMax,FanOutMax,DegreeCentralityMax,StructuralScore
+207,421,4.0676,24,28,20,0.1408,0.2138

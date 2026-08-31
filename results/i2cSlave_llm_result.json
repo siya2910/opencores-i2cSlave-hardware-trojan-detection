@@ -1,0 +1,26 @@
+{
+    "model": "qwen2.5-coder:7b",
+    "structural_features": {
+        "Nodes": "207",
+        "Edges": "421",
+        "AverageDegree": "4.0676",
+        "RareNodeCount": "24",
+        "FanInMax": "28",
+        "FanOutMax": "20",
+        "DegreeCentralityMax": "0.1408",
+        "StructuralScore": "0.2138"
+    },
+    "semantic_features": {
+        "TriggerRefs": "5",
+        "PayloadRefs": "0",
+        "TriggerCounter": "0",
+        "RareTriggerConstant": "1",
+        "MultiSignalTrigger": "1",
+        "FSMTrigger": "1",
+        "AddressTrigger": "1",
+        "InstructionTrigger": "0",
+        "Comparators": "43",
+        "Registers": "26"
+    },
+    "llm_response": "```json\n{\n  \"risk_level\": \"MEDIUM\",\n  \"confidence\": 0.75,\n  \"trigger_interpretation\": \"The circuit contains multiple triggers (5 triggers, including rare trigger constants and multi-signal triggers), which could indicate potential malicious logic. However, the presence of an FSM trigger and address trigger suggests that these triggers may have legitimate functional purposes.\",\n  \"payload_interpretation\": \"There are no payload references or payload-like logic in the circuit, which is a positive sign. However, the presence of comparators and registers could potentially be used to implement a payload if malicious logic were to be injected.\",\n  \"invariant_violations\": [\n    {\n      \"invariant\": \"Counter logic should not activate hidden payload functionality.\",\n      \"violation\": \"The circuit contains a trigger counter, which could potentially be used to activate hidden payload functionality if malicious logic were to be injected.\"\n    },\n    {\n      \"invariant\": \"Rare activation conditions should not trigger malicious logic.\",\n      \"violation\": \"The circuit contains rare trigger constants and multi-signal triggers, which could potentially be used to trigger malicious logic if malicious logic were to be injected.\"\n    }\n  ],\n  \"reason\": \"The circuit contains multiple triggers and a trigger counter, which could indicate potential malicious logic. However, the presence of an FSM trigger and address trigger suggests that these triggers may have legitimate functional purposes. The absence of payload references or payload-like logic is a positive sign, but the violation of security invariants related to counter and rare trigger logic should be addressed.\"\n}\n```"
+}
